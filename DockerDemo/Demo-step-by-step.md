@@ -1,6 +1,8 @@
 ## デモ前
 
 ```
+# VS Code Remote Container 起動
+
 # コンテナ削除
 docker rm <container id>
 
@@ -42,6 +44,10 @@ docker exec -it sample-nginx bash
 apt update
 apt install -y procps
 ps -ef   # PID 1 で nginx が稼働していることがわかる
+exit
+
+# ホストOSからみた Docker の PID を確認
+docker inspect <コンテナID> | grep Pid
 ```
 
 ## サンプルアプリ
@@ -77,3 +83,7 @@ docker run -d -p 8081:8080 --name sample2 sample:1.0.1
 # リクエスト（Hello Microsoft が出力される）
 curl http://localhost:8081
 ```
+
+## ご紹介サイト
+
+- [Docker Hub: nginx](https://hub.docker.com/_/nginx)
